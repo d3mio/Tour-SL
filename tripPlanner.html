@@ -13,7 +13,7 @@
             <div class="logo"> TOUR SL </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="destinitionPage.html">Explore</a></li>
+                <li><a href="explore.html">Explore</a></li>
                 <li><a href="#culture">Culture</a></li>
                 <li><a href="#experiences">Experiences</a></li>
             </ul>
@@ -95,71 +95,133 @@
             </div>
         </section>
 
-        <!-- Trip Builder Section -->
-        <section id="builder" class="trip-builder-section">
-            <div class="trip-builder-container">
+        <section class="trip-builder-section">
+        <div class="floating-elements">
+            <div class="floating-icon" style="left: 10%; animation-delay: 0s;">🏛️</div>
+            <div class="floating-icon" style="left: 20%; animation-delay: 3s;">🐘</div>
+            <div class="floating-icon" style="left: 80%; animation-delay: 7s;">🌅</div>
+            <div class="floating-icon" style="left: 70%; animation-delay: 12s;">🏖️</div>
+            <div class="floating-icon" style="left: 90%; animation-delay: 5s;">🚁</div>
+        </div>
+
+        <div class="trip-builder-container">
+            <div class="section-header">
                 <h2 class="section-title">Craft Your Journey</h2>
-                <p class="section-subtitle">Design a bespoke experience tailored to your desires</p>
-                
-                <div class="trip-builder">
-                    <div class="builder-grid">
-                        <div class="builder-section">
-                            <h3>Destinations</h3>
-                            <div class="form-group">
-                                <label>Select Places</label>
-                                <select class="form-control" multiple>
-                                    <option>Colombo</option>
-                                    <option>Kandy</option>
-                                    <option>Galle</option>
-                                    <option>Sigiriya</option>
-                                    <option>Ella</option>
-                                    <option>Yala</option>
-                                </select>
-                            </div>
-                        </div>
+                <p class="section-subtitle">Design a bespoke experience tailored to your desires with our intelligent trip builder</p>
+            </div>
 
-                        <div class="builder-section">
-                            <h3>Duration & Budget</h3>
-                            <div class="form-group">
-                                <label>Trip Duration</label>
-                                <select class="form-control">
-                                    <option>3-5 Days</option>
-                                    <option>6-10 Days</option>
-                                    <option>11-15 Days</option>
-                                    <option>15+ Days</option>
-                                </select>
+            <div class="journey-builder">
+                <!-- Destinations Panel -->
+                <div class="builder-panel">
+                    <div class="step-indicator">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Choose Destinations</h3>
+                    </div>
+                    
+                    <div class="destinations-selector">
+                        <div class="destinations-grid">
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="colombo">
+                                <span class="chip-emoji">🏙️</span>
+                                <div class="chip-name">Colombo</div>
                             </div>
-                            <div class="form-group">
-                                <label>Travel Style</label>
-                                <select class="form-control">
-                                    <option>Budget ($50-100/day)</option>
-                                    <option>Midrange ($100-250/day)</option>
-                                    <option>Luxury ($250+/day)</option>
-                                </select>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="kandy">
+                                <span class="chip-emoji">🏛️</span>
+                                <div class="chip-name">Kandy</div>
                             </div>
-                        </div>
-
-                        <div class="builder-section">
-                            <h3>Interests</h3>
-                            <div class="form-group">
-                                <label>Activities</label>
-                                <select class="form-control" multiple>
-                                    <option>Wildlife Safari</option>
-                                    <option>Cultural Sites</option>
-                                    <option>Beach Relaxation</option>
-                                    <option>Mountain Hiking</option>
-                                    <option>Tea Plantation Tours</option>
-                                    <option>Water Sports</option>
-                                </select>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="galle">
+                                <span class="chip-emoji">🏰</span>
+                                <div class="chip-name">Galle</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="sigiriya">
+                                <span class="chip-emoji">🗿</span>
+                                <div class="chip-name">Sigiriya</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="ella">
+                                <span class="chip-emoji">🏔️</span>
+                                <div class="chip-name">Ella</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="yala">
+                                <span class="chip-emoji">🐘</span>
+                                <div class="chip-name">Yala</div>
                             </div>
                         </div>
                     </div>
-                    <div style="text-align: center;">
-                        <button class="cta-btn primary" onclick="generateItinerary()">Generate My Itinerary</button>
+
+                    <div class="duration-slider">
+                        <div class="preference-label">
+                            ⏱️ Trip Duration: <span id="duration-value">7 days</span>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" class="duration-range" min="3" max="21" value="7" 
+                                   oninput="updateDuration(this.value)" id="duration-slider">
+                            <div class="slider-labels">
+                                <span>3 days</span>
+                                <span>21 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences Panel -->
+                <div class="builder-panel">
+                    <div class="step-indicator">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Your Preferences</h3>
+                    </div>
+
+                    <div class="preferences-section">
+                        <div class="preference-group">
+                            <div class="preference-label">💰 Budget Range</div>
+                            <div class="preference-options">
+                                <div class="option-tag" onclick="toggleOption(this)">Budget ($50-100/day)</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Midrange ($100-250/day)</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Luxury ($250+/day)</div>
+                            </div>
+                        </div>
+
+                        <div class="preference-group">
+                            <div class="preference-label">🎯 Travel Style</div>
+                            <div class="preference-options">
+                                <div class="option-tag" onclick="toggleOption(this)">Adventure</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Relaxation</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Cultural</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Photography</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Romantic</div>
+                            </div>
+                        </div>
+
+                        <div class="preference-group">
+                            <div class="preference-label">🌟 Activities</div>
+                            <div class="preference-options">
+                                <div class="option-tag" onclick="toggleOption(this)">Wildlife Safari</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Cultural Sites</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Beach Time</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Mountain Hiking</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Tea Tours</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Water Sports</div>
+                            </div>
+                        </div>
+
+                        <div class="preference-group">
+                            <div class="preference-label">🏨 Accommodation</div>
+                            <div class="preference-options">
+                                <div class="option-tag" onclick="toggleOption(this)">Boutique Hotels</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Beach Resorts</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Heritage Hotels</div>
+                                <div class="option-tag" onclick="toggleOption(this)">Eco Lodges</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="generate-section">
+                <button class="generate-btn" onclick="generateItinerary()">
+                    ✨ Generate My Perfect Journey
+                </button>
+            </div>
+        </div>
+    </section>
 
         <!-- Why Sri Lanka Section -->
         <section id="info" class="why-section">
@@ -271,7 +333,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observerr = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -284,6 +346,140 @@
         document.querySelectorAll('.destination-card, .feature-item, .builder-section').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observerr.observe(el);
+        });
+
+
+        // Track selected options
+        let selectedDestinations = [];
+        let selectedPreferences = {
+            budget: null,
+            style: [],
+            activities: [],
+            accommodation: []
+        };
+
+        function toggleDestination(element) {
+            const destination = element.dataset.destination;
+            
+            if (element.classList.contains('selected')) {
+                element.classList.remove('selected');
+                selectedDestinations = selectedDestinations.filter(d => d !== destination);
+            } else {
+                element.classList.add('selected');
+                selectedDestinations.push(destination);
+            }
+            
+            // Add subtle animation
+            element.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                element.style.transform = '';
+            }, 150);
+        }
+
+        function toggleOption(element) {
+            const group = element.closest('.preference-group');
+            const isMultiSelect = !group.querySelector('.preference-label').textContent.includes('Budget');
+            
+            if (!isMultiSelect) {
+                // Single select for budget
+                group.querySelectorAll('.option-tag').forEach(tag => tag.classList.remove('selected'));
+            }
+            
+            element.classList.toggle('selected');
+            
+            // Add ripple effect
+            const ripple = document.createElement('div');
+            ripple.style.cssText = `
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(212, 175, 55, 0.4);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                left: 50%;
+                top: 50%;
+                pointer-events: none;
+            `;
+            
+            element.style.position = 'relative';
+            element.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        function updateDuration(value) {
+            document.getElementById('duration-value').textContent = `${value} day${value > 1 ? 's' : ''}`;
+        }
+
+        function generateItinerary() {
+            const button = document.querySelector('.generate-btn');
+            const section = document.querySelector('.trip-builder-section');
+            
+            // Add loading state
+            section.classList.add('loading');
+            button.innerHTML = '🔮 Crafting Your Adventure...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                section.classList.remove('loading');
+                button.innerHTML = '✨ Generate My Perfect Journey';
+                
+                // Show success message with collected data
+                const summary = {
+                    destinations: selectedDestinations,
+                    duration: document.getElementById('duration-slider').value,
+                    selectedOptions: document.querySelectorAll('.option-tag.selected').length
+                };
+                
+                alert(`🎉 Your custom itinerary is being created!\n\n` +
+                      `📍 Destinations: ${selectedDestinations.length > 0 ? selectedDestinations.join(', ') : 'None selected'}\n` +
+                      `⏱️ Duration: ${summary.duration} days\n` +
+                      `⚙️ Preferences: ${summary.selectedOptions} selected\n\n` +
+                      `You'll receive your personalized Sri Lankan adventure plan within 24 hours!`);
+            }, 3000);
+        }
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add entrance animations
+        window.addEventListener('load', () => {
+            const panels = document.querySelectorAll('.builder-panel');
+            panels.forEach((panel, index) => {
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateY(50px)';
+                panel.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                
+                setTimeout(() => {
+                    panel.style.opacity = '1';
+                    panel.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // Smooth scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.destination-chip, .preference-group').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });

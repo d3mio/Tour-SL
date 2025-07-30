@@ -13,7 +13,7 @@
             <div class="logo"> TOUR SL </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="destinitionPage.html">Explore</a></li>
+                <li><a href="explore.html">Explore</a></li>
                 <li><a href="#culture">Culture</a></li>
                 <li><a href="#experiences">Experiences</a></li>
             </ul>
@@ -22,314 +22,314 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg">
-            <img src="images/pexels-freestockpro-319892.jpg" alt="Sri Lanka Landscape">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h1>Luxury Stays & Premium Transport</h1>
-            <p>Experience Ceylon's finest accommodations and seamless travel solutions</p>
-            <a href="tripPlanner.html" class="cta-button">Explore Options</a>
-        </div>
+   <section class="hero" id="home">
+    <div class="hero-bg">
+        <img src="images/pexels-freestockpro-319892.jpg" alt="Sri Lanka Landscape">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+        <h1 class="hero-title">Luxury Stays & Premium Transport</h1>
+        <p class="hero-subtitle">Experience Ceylon's finest accommodations and seamless travel solutions</p>
+    </div>
     </section>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
-            <!-- Quick Stats -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Premium Hotels</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Vehicle Options</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support Service</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Satisfaction Rate</div>
-                </div>
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Premium Hotels</div>
             </div>
-
-            <!-- Tab Navigation -->
-            <div class="tab-container">
-                <div class="tab active" onclick="switchTab('hotels')">🏨 Hotels & Stays</div>
-                <div class="tab" onclick="switchTab('transport')">🚗 Transport & Rentals</div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Vehicle Options</div>
             </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Service</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Satisfaction Rate</div>
+            </div>
+        </div>
 
-            <!-- Hotels Section -->
-            <section id="hotels" class="section tab-content active">
-                <h2 class="section-title">Curated Accommodations</h2>
-                
-                <!-- Filter Bar -->
-                <div class="filter-bar">
-                    <div class="filter-grid">
-                        <div class="filter-group">
-                            <label>Region</label>
-                            <select class="form-control" onchange="filterHotels()">
-                                <option>All Regions</option>
-                                <option>Colombo</option>
-                                <option>Kandy</option>
-                                <option>Galle</option>
-                                <option>Sigiriya</option>
-                                <option>Ella</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Hotel Type</label>
-                            <select class="form-control" onchange="filterHotels()">
-                                <option>All Types</option>
-                                <option>Luxury Resort</option>
-                                <option>Boutique Hotel</option>
-                                <option>Villa</option>
-                                <option>Hostel</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Price Range</label>
-                            <select class="form-control" onchange="filterHotels()">
-                                <option>All Prices</option>
-                                <option>$50 - $100</option>
-                                <option>$100 - $250</option>
-                                <option>$250 - $500</option>
-                                <option>$500+</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Rating</label>
-                            <select class="form-control" onchange="filterHotels()">
-                                <option>All Ratings</option>
-                                <option>5 Stars</option>
-                                <option>4 Stars</option>
-                                <option>3 Stars</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+            <div class="tab active" onclick="switchTab('hotels')">🏨 Hotels & Stays</div>
+            <div class="tab" onclick="switchTab('transport')">🚗 Transport & Rentals</div>
+        </div>
 
-                <!-- Hotel Grid -->
-                <div class="hotel-grid">
-                    <div class="hotel-card" data-region="colombo" data-type="luxury" data-price="500">
-                        <div class="hotel-image">
-                            🏨
-                            <div class="hotel-rating">⭐ 5.0</div>
-                        </div>
-                        <div class="hotel-content">
-                            <h3 class="hotel-name">The Galle Face Hotel</h3>
-                            <div class="hotel-location">Colombo 03, Western Province</div>
-                            <div class="hotel-price">$350 <span style="font-size: 1rem; color: #999;">/night</span></div>
-                            <div class="hotel-features">
-                                <span class="feature-tag">Ocean View</span>
-                                <span class="feature-tag">Spa</span>
-                                <span class="feature-tag">Pool</span>
-                                <span class="feature-tag">Fine Dining</span>
-                            </div>
-                            <button class="book-btn">Reserve Now</button>
-                        </div>
-                    </div>
-
-                    <div class="hotel-card" data-region="kandy" data-type="boutique" data-price="200">
-                        <div class="hotel-image">
-                            🏛️
-                            <div class="hotel-rating">⭐ 4.8</div>
-                        </div>
-                        <div class="hotel-content">
-                            <h3 class="hotel-name">Earl's Regency</h3>
-                            <div class="hotel-location">Kandy, Central Province</div>
-                            <div class="hotel-price">$180 <span style="font-size: 1rem; color: #999;">/night</span></div>
-                            <div class="hotel-features">
-                                <span class="feature-tag">Hill Views</span>
-                                <span class="feature-tag">Cultural Tours</span>
-                                <span class="feature-tag">Garden</span>
-                                <span class="feature-tag">Traditional</span>
-                            </div>
-                            <button class="book-btn">Reserve Now</button>
-                        </div>
-                    </div>
-
-                    <div class="hotel-card" data-region="galle" data-type="villa" data-price="300">
-                        <div class="hotel-image">
-                            🏖️
-                            <div class="hotel-rating">⭐ 4.9</div>
-                        </div>
-                        <div class="hotel-content">
-                            <h3 class="hotel-name">Amangalla</h3>
-                            <div class="hotel-location">Galle Fort, Southern Province</div>
-                            <div class="hotel-price">$450 <span style="font-size: 1rem; color: #999;">/night</span></div>
-                            <div class="hotel-features">
-                                <span class="feature-tag">Historic</span>
-                                <span class="feature-tag">Beach Access</span>
-                                <span class="feature-tag">Wellness</span>
-                                <span class="feature-tag">Butler Service</span>
-                            </div>
-                            <button class="book-btn">Reserve Now</button>
-                        </div>
-                    </div>
-
-                    <div class="hotel-card" data-region="ella" data-type="boutique" data-price="150">
-                        <div class="hotel-image">
-                            🏔️
-                            <div class="hotel-rating">⭐ 4.7</div>
-                        </div>
-                        <div class="hotel-content">
-                            <h3 class="hotel-name">98 Acres Resort</h3>
-                            <div class="hotel-location">Ella, Uva Province</div>
-                            <div class="hotel-price">$120 <span style="font-size: 1rem; color: #999;">/night</span></div>
-                            <div class="hotel-features">
-                                <span class="feature-tag">Mountain Views</span>
-                                <span class="feature-tag">Tea Estate</span>
-                                <span class="feature-tag">Hiking</span>
-                                <span class="feature-tag">Eco-Friendly</span>
-                            </div>
-                            <button class="book-btn">Reserve Now</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Transport Section -->
-            <section id="transport" class="section tab-content">
-                <h2 class="section-title">Premium Transport Solutions</h2>
-                
-                <div class="transport-grid">
-                    <div class="transport-card">
-                        <div class="transport-icon">🚗</div>
-                        <h3>Luxury Sedan</h3>
-                        <div class="transport-price">$45/day</div>
-                        <ul class="transport-features">
-                            <li>Air Conditioning</li>
-                            <li>Professional Driver</li>
-                            <li>Fuel Included</li>
-                            <li>Insurance Coverage</li>
-                            <li>City & Highway Travel</li>
-                        </ul>
-                        <button class="book-btn">Book Vehicle</button>
-                    </div>
-
-                    <div class="transport-card">
-                        <div class="transport-icon">🚐</div>
-                        <h3>Family Van</h3>
-                        <div class="transport-price">$65/day</div>
-                        <ul class="transport-features">
-                            <li>8-Seater Capacity</li>
-                            <li>Luggage Space</li>
-                            <li>AC & Entertainment</li>
-                            <li>Experienced Driver</li>
-                            <li>Long Distance Tours</li>
-                        </ul>
-                        <button class="book-btn">Book Vehicle</button>
-                    </div>
-
-                    <div class="transport-card">
-                        <div class="transport-icon">🏍️</div>
-                        <h3>Tuk-Tuk</h3>
-                        <div class="transport-price">$25/day</div>
-                        <ul class="transport-features">
-                            <li>3-Seater</li>
-                            <li>City Exploration</li>
-                            <li>Local Experience</li>
-                            <li>Budget Friendly</li>
-                            <li>Short Distances</li>
-                        </ul>
-                        <button class="book-btn">Book Vehicle</button>
-                    </div>
-
-                    <div class="transport-card">
-                        <div class="transport-icon">🚙</div>
-                        <h3>Safari Jeep</h3>
-                        <div class="transport-price">$85/day</div>
-                        <ul class="transport-features">
-                            <li>4WD Capability</li>
-                            <li>Wildlife Tours</li>
-                            <li>Open-Top Option</li>
-                            <li>Professional Guide</li>
-                            <li>Photography Equipment</li>
-                        </ul>
-                        <button class="book-btn">Book Vehicle</button>
-                    </div>
-
-                    <div class="transport-card">
-                        <div class="transport-icon">🛵</div>
-                        <h3>Scooter Rental</h3>
-                        <div class="transport-price">$15/day</div>
-                        <ul class="transport-features">
-                            <li>Self-Drive</li>
-                            <li>Fuel Efficient</li>
-                            <li>Helmet Included</li>
-                            <li>Beach Areas</li>
-                            <li>Easy Parking</li>
-                        </ul>
-                        <button class="book-btn">Book Vehicle</button>
-                    </div>
-
-                    <div class="transport-card">
-                        <div class="transport-icon">🚁</div>
-                        <h3>Helicopter Charter</h3>
-                        <div class="transport-price">$800/hour</div>
-                        <ul class="transport-features">
-                            <li>Luxury Travel</li>
-                            <li>Aerial Views</li>
-                            <li>Time Efficient</li>
-                            <li>VIP Service</li>
-                            <li>Any Destination</li>
-                        </ul>
-                        <button class="book-btn">Book Vehicle</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Booking Section -->
-            <section id="booking" class="booking-section">
-                <h2 class="section-title">Quick Booking</h2>
-                <div class="booking-form">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Enter your phone">
-                    </div>
-                    <div class="form-group">
-                        <label>Check-in Date</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Check-out Date</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Service Type</label>
-                        <select class="form-control">
-                            <option>Hotel Booking</option>
-                            <option>Vehicle Rental</option>
-                            <option>Both Services</option>
+        <!-- Hotels Section -->
+        <section id="hotels" class="section tab-content active">
+            <h2 class="section-title">Curated Accommodations</h2>
+            <p class="section-subtitle">Handpicked luxury stays across Sri Lanka's most enchanting destinations</p>
+            
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Region</label>
+                        <select class="form-control" onchange="filterHotels()">
+                            <option>All Regions</option>
+                            <option>Colombo</option>
+                            <option>Kandy</option>
+                            <option>Galle</option>
+                            <option>Sigiriya</option>
+                            <option>Ella</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Pickup Location</label>
-                        <input type="text" class="form-control" placeholder="Enter pickup location">
+                    <div class="filter-group">
+                        <label>Hotel Type</label>
+                        <select class="form-control" onchange="filterHotels()">
+                            <option>All Types</option>
+                            <option>Luxury Resort</option>
+                            <option>Boutique Hotel</option>
+                            <option>Villa</option>
+                            <option>Hostel</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label>Special Requests</label>
-                        <textarea class="form-control" rows="3" placeholder="Any special requirements..."></textarea>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <select class="form-control" onchange="filterHotels()">
+                            <option>All Prices</option>
+                            <option>$50 - $100</option>
+                            <option>$100 - $250</option>
+                            <option>$250 - $500</option>
+                            <option>$500+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Rating</label>
+                        <select class="form-control" onchange="filterHotels()">
+                            <option>All Ratings</option>
+                            <option>5 Stars</option>
+                            <option>4 Stars</option>
+                            <option>3 Stars</option>
+                        </select>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <button class="cta-button" onclick="submitBooking()">Confirm Booking</button>
+            </div>
+
+            <!-- Hotel Grid -->
+            <div class="hotel-grid">
+                <div class="hotel-card" data-region="colombo" data-type="luxury" data-price="500">
+                    <div class="hotel-image">
+                        🏨
+                        <div class="hotel-rating">⭐ 5.0</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-name">The Galle Face Hotel</h3>
+                        <div class="hotel-location">Colombo 03, Western Province</div>
+                        <div class="hotel-price">$350 <span>/night</span></div>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Ocean View</span>
+                            <span class="feature-tag">Spa</span>
+                            <span class="feature-tag">Pool</span>
+                            <span class="feature-tag">Fine Dining</span>
+                        </div>
+                        <button class="book-btn">Reserve Now</button>
+                    </div>
                 </div>
-            </section>
-        </div>
+
+                <div class="hotel-card" data-region="kandy" data-type="boutique" data-price="200">
+                    <div class="hotel-image">
+                        🏛️
+                        <div class="hotel-rating">⭐ 4.8</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-name">Earl's Regency</h3>
+                        <div class="hotel-location">Kandy, Central Province</div>
+                        <div class="hotel-price">$180 <span>/night</span></div>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Hill Views</span>
+                            <span class="feature-tag">Cultural Tours</span>
+                            <span class="feature-tag">Garden</span>
+                            <span class="feature-tag">Traditional</span>
+                        </div>
+                        <button class="book-btn">Reserve Now</button>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-region="galle" data-type="villa" data-price="300">
+                    <div class="hotel-image">
+                        🏖️
+                        <div class="hotel-rating">⭐ 4.9</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-name">Amangalla</h3>
+                        <div class="hotel-location">Galle Fort, Southern Province</div>
+                        <div class="hotel-price">$450 <span>/night</span></div>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Historic</span>
+                            <span class="feature-tag">Beach Access</span>
+                            <span class="feature-tag">Wellness</span>
+                            <span class="feature-tag">Butler Service</span>
+                        </div>
+                        <button class="book-btn">Reserve Now</button>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-region="ella" data-type="boutique" data-price="150">
+                    <div class="hotel-image">
+                        🏔️
+                        <div class="hotel-rating">⭐ 4.7</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-name">98 Acres Resort</h3>
+                        <div class="hotel-location">Ella, Uva Province</div>
+                        <div class="hotel-price">$120 <span>/night</span></div>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Mountain Views</span>
+                            <span class="feature-tag">Tea Estate</span>
+                            <span class="feature-tag">Hiking</span>
+                            <span class="feature-tag">Eco-Friendly</span>
+                        </div>
+                        <button class="book-btn">Reserve Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transport Section -->
+        <section id="transport" class="section tab-content">
+            <h2 class="section-title">Premium Transport Solutions</h2>
+            <p class="section-subtitle">Professional drivers and well-maintained vehicles for your journey</p>
+            
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚗</div>
+                    <h3>Luxury Sedan</h3>
+                    <div class="transport-price">$45/day</div>
+                    <ul class="transport-features">
+                        <li>Air Conditioning</li>
+                        <li>Professional Driver</li>
+                        <li>Fuel Included</li>
+                        <li>Insurance Coverage</li>
+                        <li>City & Highway Travel</li>
+                    </ul>
+                    <button class="book-btn">Book Vehicle</button>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🚐</div>
+                    <h3>Family Van</h3>
+                    <div class="transport-price">$65/day</div>
+                    <ul class="transport-features">
+                        <li>8-Seater Capacity</li>
+                        <li>Luggage Space</li>
+                        <li>AC & Entertainment</li>
+                        <li>Experienced Driver</li>
+                        <li>Long Distance Tours</li>
+                    </ul>
+                    <button class="book-btn">Book Vehicle</button>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🏍️</div>
+                    <h3>Tuk-Tuk</h3>
+                    <div class="transport-price">$25/day</div>
+                    <ul class="transport-features">
+                        <li>3-Seater</li>
+                        <li>City Exploration</li>
+                        <li>Local Experience</li>
+                        <li>Budget Friendly</li>
+                        <li>Short Distances</li>
+                    </ul>
+                    <button class="book-btn">Book Vehicle</button>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🚙</div>
+                    <h3>Safari Jeep</h3>
+                    <div class="transport-price">$85/day</div>
+                    <ul class="transport-features">
+                        <li>4WD Capability</li>
+                        <li>Wildlife Tours</li>  
+                        <li>Open-Top Option</li>
+                        <li>Professional Guide</li>
+                        <li>Photography Equipment</li>
+                    </ul>
+                    <button class="book-btn">Book Vehicle</button>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🛵</div>
+                    <h3>Scooter Rental</h3>
+                    <div class="transport-price">$15/day</div>
+                    <ul class="transport-features">
+                        <li>Self-Drive</li>
+                        <li>Fuel Efficient</li>
+                        <li>Helmet Included</li>
+                        <li>Beach Areas</li>
+                        <li>Easy Parking</li>
+                    </ul>
+                    <button class="book-btn">Book Vehicle</button>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🚁</div>
+                    <h3>Helicopter Charter</h3>
+                    <div class="transport-price">$800/hour</div>
+                    <ul class="transport-features">
+                        <li>Luxury Travel</li>
+                        <li>Aerial Views</li>
+                        <li>Time Efficient</li>
+                        <li>VIP Service</li>
+                        <li>Any Destination</li>
+                    </ul>
+                    <button class="book-btn">Book Vehicle</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="booking-section">
+            <h2 class="section-title">Quick Booking</h2>
+            <p class="section-subtitle">Get in touch to reserve your perfect Ceylon experience</p>
+            <div class="booking-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" class="form-control" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Service Type</label>
+                    <select class="form-control">
+                        <option>Hotel Booking</option>
+                        <option>Vehicle Rental</option>
+                        <option>Both Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pickup Location</label>
+                    <input type="text" class="form-control" placeholder="Enter pickup location">
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea class="form-control" rows="3" placeholder="Any special requirements..."></textarea>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="cta-btn" onclick="submitBooking()">Confirm Booking</button>
+            </div>
+        </section>
     </main>
 
     <script>
@@ -385,11 +385,11 @@
 
         // Add scroll effect to header
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
+            const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.classList.add('scrolled');
             } else {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.classList.remove('scrolled');
             }
         });
 
@@ -398,6 +398,32 @@
             btn.addEventListener('click', function() {
                 const section = document.getElementById('booking');
                 section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.hotel-card, .transport-card, .stat-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
             });
         });
     </script>
