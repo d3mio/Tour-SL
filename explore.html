@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Sri Lanka - Destinations</title>
+    <link rel="stylesheet" href="css/explore.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SRI LANKA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html" class="active">Explore</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+            </ul>
+            <button class="login-btn">🔐 Login</button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="page-title">EXPLORE</h1>
+            <p class="page-subtitle">Discover extraordinary destinations</p>
+        </div>
+    </section>
+
+    <!-- Interactive Map/Regions Section -->
+    <section class="map-section">
+        <h2 class="section-title">REGIONS OF SRI LANKA</h2>
+        <p class="section-subtitle">Select a region to explore its treasures</p>
+        
+        <div class="region-tabs">
+            <button class="region-tab active" data-region="all">All</button>
+            <button class="region-tab" data-region="central">Central</button>
+            <button class="region-tab" data-region="south">South</button>
+            <button class="region-tab" data-region="east">East</button>
+            <button class="region-tab" data-region="north">North</button>
+            <button class="region-tab" data-region="cultural">Cultural Triangle</button>
+        </div>
+
+        <div class="destinations-container">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading destinations...</p>
+            </div>
+            
+            <!-- All Destinations (Default) -->
+            <div class="destinations-grid active" id="all-destinations">
+                <!-- Central Region -->
+                <div class="destination-card" data-region="central">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kandy" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Kandy</h3>
+                        <p class="card-description">Sacred city home to the Temple of the Tooth and rich cultural heritage</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="central">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nuwara Eliya" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Nuwara Eliya</h3>
+                        <p class="card-description">Cool mountain retreat with colonial charm and endless tea plantations</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="central">
+                    <img src="https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ella" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Ella</h3>
+                        <p class="card-description">Breathtaking views, Nine Arch Bridge, and misty mountain adventures</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+
+                <!-- South Region -->
+                <div class="destination-card" data-region="south">
+                    <img src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Galle" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Galle</h3>
+                        <p class="card-description">Historic Dutch fort overlooking the Indian Ocean</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="south">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mirissa" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Mirissa</h3>
+                        <p class="card-description">Golden beaches and world-class whale watching opportunities</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="south">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tangalle" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Tangalle</h3>
+                        <p class="card-description">Pristine beaches and tranquil lagoons for ultimate relaxation</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+
+                <!-- East Region -->
+                <div class="destination-card" data-region="east">
+                    <img src="https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trincomalee" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Trincomalee</h3>
+                        <p class="card-description">Ancient port city with pristine beaches and spiritual temples</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="east">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Arugam Bay" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Arugam Bay</h3>
+                        <p class="card-description">World-renowned surfing destination with laid-back vibes</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="east">
+                    <img src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Batticaloa" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Batticaloa</h3>
+                        <p class="card-description">Singing fish and beautiful lagoons in the eastern province</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+
+                <!-- North Region -->
+                <div class="destination-card" data-region="north">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jaffna" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Jaffna</h3>
+                        <p class="card-description">Rich Tamil culture and historic fort in the northern peninsula</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="north">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mannar" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Mannar</h3>
+                        <p class="card-description">Baobab trees and migratory birds in this unique landscape</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="north">
+                    <img src="https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kilinochchi" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Kilinochchi</h3>
+                        <p class="card-description">Emerging destination with authentic northern culture</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+
+                <!-- Cultural Triangle -->
+                <div class="destination-card" data-region="cultural">
+                    <img src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sigiriya" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Sigiriya</h3>
+                        <p class="card-description">Ancient rock fortress with breathtaking frescoes and gardens</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="cultural">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Anuradhapura" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Anuradhapura</h3>
+                        <p class="card-description">Ancient capital with sacred Buddhist temples and stupas</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-region="cultural">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Polonnaruwa" class="card-bg">
+                    <div class="card-content">
+                        <h3 class="card-title">Polonnaruwa</h3>
+                        <p class="card-description">Medieval capital with impressive stone carvings and ruins</p>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <h2 class="section-title">EXPLORE BY EXPERIENCE</h2>
+            <p class="section-subtitle">Find destinations that match your interests</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">🏖️</div>
+                    <h3 class="category-title">Beaches</h3>
+                    <p class="category-description">Pristine coastlines, golden sands, and crystal-clear waters for ultimate relaxation</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🐘</div>
+                    <h3 class="category-title">Wildlife</h3>
+                    <p class="category-description">Encounter majestic elephants, leopards, and exotic birds in natural habitats</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">⛰️</div>
+                    <h3 class="category-title">Mountains</h3>
+                    <p class="category-description">Misty peaks, cascading waterfalls, and breathtaking panoramic views</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🛕</div>
+                    <h3 class="category-title">Spiritual</h3>
+                    <p class="category-description">Sacred temples, meditation retreats, and profound spiritual experiences</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🏛️</div>
+                    <h3 class="category-title">Historical</h3>
+                    <p class="category-description">Ancient ruins, colonial architecture, and 2,500 years of rich heritage</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🌿</div>
+                    <h3 class="category-title">Adventure</h3>
+                    <p class="category-description">Trekking, surfing, white water rafting, and thrilling outdoor activities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Region tab functionality - FIXED VERSION
+        const regionTabs = document.querySelectorAll('.region-tab');
+        const destinationsContainer = document.querySelector('.destinations-container');
+        const destinationsGrid = document.getElementById('all-destinations');
+        const allCards = document.querySelectorAll('.destination-card');
+        const loading = document.querySelector('.loading');
+
+        // Function to scroll to top of destinations
+        function scrollToDestinations() {
+            const mapSection = document.querySelector('.map-section');
+            const offsetTop = mapSection.offsetTop + 200; // Adjust offset as needed
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+        // Function to filter destinations
+        function filterDestinations(region) {
+            allCards.forEach(card => {
+                if (region === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.dataset.region === region) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Tab click functionality
+        regionTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                regionTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show loading animation
+                loading.style.display = 'block';
+                destinationsGrid.style.opacity = '0.3';
+                
+                // Get selected region
+                const selectedRegion = tab.dataset.region;
+                
+                // Simulate loading delay for smooth transition
+                setTimeout(() => {
+                    // Hide loading
+                    loading.style.display = 'none';
+                    destinationsGrid.style.opacity = '1';
+                    
+                    // Filter destinations
+                    filterDestinations(selectedRegion);
+                    
+                    // Scroll to top of destinations after filtering
+                    setTimeout(() => {
+                        scrollToDestinations();
+                    }, 100);
+                    
+                }, 500);
+            });
+        });
+
+        // Category card interactions
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Add a subtle pulse effect
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'translateY(-5px)';
+                }, 150);
+            });
+        });
+
+        // Destination card hover effects
+        const destinationCards = document.querySelectorAll('.destination-card');
+        destinationCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Add subtle shadow effect
+                card.style.boxShadow = '0 20px 40px rgba(212, 175, 55, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = 'none';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.destination-card, .category-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // View More button functionality
+        document.querySelectorAll('.view-more-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Add your view more logic here
+                console.log('View more clicked for:', btn.closest('.destination-card').querySelector('.card-title').textContent);
+                
+                // Button feedback
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize page - show all destinations by default
+        window.addEventListener('load', () => {
+            filterDestinations('all');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages & Trip Planner - Sri Lanka</title>
+    <link rel="stylesheet" href="css/planner.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo"> TOUR SL </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinitionPage.html">Explore</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+            </ul>
+            <button class="login-btn"> Login </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Sri Lanka</h1>
+            <p class="hero-subtitle">Curated experiences that capture the essence of the Pearl of the Indian Ocean</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Featured Packages Section -->
+        <section id="packages" class="featured">
+            <h2 class="section-title">Signature Experiences</h2>
+            <p class="section-subtitle">Handcrafted journeys for the discerning traveler</p>
+            
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <div class="tab active" onclick="filterPackages('all')">All</div>
+                <div class="tab" onclick="filterPackages('wildlife')">Wildlife</div>
+                <div class="tab" onclick="filterPackages('cultural')">Cultural</div>
+                <div class="tab" onclick="filterPackages('romantic')">Romantic</div>
+                <div class="tab" onclick="filterPackages('luxury')">Luxury</div>
+            </div>
+
+            <!-- Package Grid -->
+            <div class="destinations-grid">
+                <div class="destination-card" data-category="cultural">
+                    <div class="card-bg">🏛️</div>
+                    <div class="card-content">
+                        <div class="package-duration">3 Days</div>
+                        <h3 class="card-title">Cultural Triangle</h3>
+                        <div class="package-price">$299</div>
+                        <p class="card-description">Explore ancient kingdoms, climb Sigiriya Rock, and discover sacred temples in this immersive cultural journey.</p>
+                        <button class="book-btn">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-category="wildlife">
+                    <div class="card-bg">🐘</div>
+                    <div class="card-content">
+                        <div class="package-duration">5 Days</div>
+                        <h3 class="card-title">Safari Adventure</h3>
+                        <div class="package-price">$599</div>
+                        <p class="card-description">Encounter leopards, elephants, and exotic birds across Yala and Udawalawe National Parks.</p>
+                        <button class="book-btn">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-category="romantic">
+                    <div class="card-bg">🌅</div>
+                    <div class="card-content">
+                        <div class="package-duration">7 Days</div>
+                        <h3 class="card-title">Romantic Escape</h3>
+                        <div class="package-price">$899</div>
+                        <p class="card-description">Sunset cruises, private beach dinners, and luxury spa treatments for couples.</p>
+                        <button class="book-btn">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-category="luxury">
+                    <div class="card-bg">👑</div>
+                    <div class="card-content">
+                        <div class="package-duration">10 Days</div>
+                        <h3 class="card-title">Ultimate Ceylon</h3>
+                        <div class="package-price">$1,999</div>
+                        <p class="card-description">The pinnacle of luxury travel with helicopter transfers, private chefs, and exclusive experiences.</p>
+                        <button class="book-btn">Book Experience</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trip Builder Section -->
+        <section id="builder" class="trip-builder-section">
+            <div class="trip-builder-container">
+                <h2 class="section-title">Craft Your Journey</h2>
+                <p class="section-subtitle">Design a bespoke experience tailored to your desires</p>
+                
+                <div class="trip-builder">
+                    <div class="builder-grid">
+                        <div class="builder-section">
+                            <h3>Destinations</h3>
+                            <div class="form-group">
+                                <label>Select Places</label>
+                                <select class="form-control" multiple>
+                                    <option>Colombo</option>
+                                    <option>Kandy</option>
+                                    <option>Galle</option>
+                                    <option>Sigiriya</option>
+                                    <option>Ella</option>
+                                    <option>Yala</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="builder-section">
+                            <h3>Duration & Budget</h3>
+                            <div class="form-group">
+                                <label>Trip Duration</label>
+                                <select class="form-control">
+                                    <option>3-5 Days</option>
+                                    <option>6-10 Days</option>
+                                    <option>11-15 Days</option>
+                                    <option>15+ Days</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Travel Style</label>
+                                <select class="form-control">
+                                    <option>Budget ($50-100/day)</option>
+                                    <option>Midrange ($100-250/day)</option>
+                                    <option>Luxury ($250+/day)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="builder-section">
+                            <h3>Interests</h3>
+                            <div class="form-group">
+                                <label>Activities</label>
+                                <select class="form-control" multiple>
+                                    <option>Wildlife Safari</option>
+                                    <option>Cultural Sites</option>
+                                    <option>Beach Relaxation</option>
+                                    <option>Mountain Hiking</option>
+                                    <option>Tea Plantation Tours</option>
+                                    <option>Water Sports</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="cta-btn primary" onclick="generateItinerary()">Generate My Itinerary</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Sri Lanka Section -->
+        <section id="info" class="why-section">
+            <div class="why-container">
+                <h2 class="section-title">Why Sri Lanka</h2>
+                <p class="section-subtitle">A destination that captivates the soul</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🌦️</div>
+                        <h3 class="feature-title">Perfect Climate</h3>
+                        <p class="feature-description">December to March offers the ideal dry season, perfect for beaches and wildlife encounters.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">🏛️</div>
+                        <h3 class="feature-title">Rich Heritage</h3>
+                        <p class="feature-description">Ancient kingdoms, sacred temples, and colonial architecture tell stories spanning millennia.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">🐘</div>
+                        <h3 class="feature-title">Diverse Wildlife</h3>
+                        <p class="feature-description">From leopards to blue whales, experience one of Asia's most biodiverse destinations.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">✈️</div>
+                        <h3 class="feature-title">Easy Access</h3>
+                        <p class="feature-description">Simple ETA visa process and direct flights from major global destinations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="section-title">Begin Your Ceylon Adventure</h2>
+            <p class="section-subtitle">Let us craft your perfect Sri Lankan experience</p>
+            <div class="cta-buttons">
+                <a href="#packages" class="cta-btn primary">Explore Packages</a>
+                <a href="#builder" class="cta-btn">Custom Itinerary</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Filter packages by category
+        function filterPackages(category) {
+            const cards = document.querySelectorAll('.destination-card');
+            const tabs = document.querySelectorAll('.tab');
+            
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide cards with animation
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.transition = 'all 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Generate itinerary
+        function generateItinerary() {
+            alert('Your custom itinerary is being generated! You will receive it via email within 24 hours.');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.destination-card, .feature-item, .builder-section').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
