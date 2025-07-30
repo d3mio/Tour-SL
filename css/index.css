@@ -1,4 +1,4 @@
-* {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -155,9 +155,10 @@
         }
 
         .hero-title {
+            
             font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 100;
-            letter-spacing: 3px;
+            font-weight: 200;
+            letter-spacing: 7px;
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeInUp 1.5s ease 0.5s forwards;
@@ -165,8 +166,9 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 300;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            letter-spacing: 2px;
+            font-weight: 400;
             color: #d4af37;
             margin-bottom: 40px;
             opacity: 0;
@@ -182,6 +184,51 @@
         }
         }
 
+
+
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .cta-btn {
+            padding: 20px 40px;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn.primary {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-btn.primary:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+        
         /* Featured Destinations */
         .featured {
             padding: 100px 5%;
@@ -312,48 +359,6 @@
         .feature-description {
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 5%;
-            text-align: center;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-
-        .cta-btn {
-            padding: 20px 40px;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            background: transparent;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 300;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-btn.primary {
-            background: #d4af37;
-            color: #000;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-btn.primary:hover {
-            background: transparent;
-            color: #d4af37;
         }
 
         /* Mobile Responsive */
