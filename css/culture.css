@@ -8,7 +8,6 @@
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    
     color: #fff;
     overflow-x: hidden;
     line-height: 1.6;
@@ -89,17 +88,6 @@ body {
     transform: translateY(30px);
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 3;
-    color: #d4af37;
-    animation: bounce 2s infinite;
-}
-
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
     40% { transform: translateX(-50%) translateY(-10px); }
@@ -142,24 +130,39 @@ body {
 }
 
 .intro-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 60px;
-    font-weight: 300;
-}
-
-/* Festival Timeline */
-
-.festtivals-showcase {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     padding: 60px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin: 60px 0;
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    font-weight: 300;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+
+/* Festival Timeline */
+
+.festivals-showcase {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 60px;
+    text-align: center;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    margin: 60px 0;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
 .festivals-showcase h2 {
@@ -215,14 +218,16 @@ body {
     background: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-content:hover {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
 }
 
 .timeline-content h3 {
@@ -249,6 +254,7 @@ body {
     transform: translateX(-50%);
     border: 4px solid #000;
     z-index: 10;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 /*arts and culture showcase*/
@@ -279,56 +285,15 @@ body {
 .arts-crafts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.arts-crafts-grid h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #d4af37;
-    font-weight: 300;
-}
-
-.culture-grid p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 50px;
-    font-weight: 300;
-}
-.arts-crafts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     margin-top: 60px;
-}
-
-/*
-.arts-crafts-card {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
-    backdrop-filter: blur(20px);
-    overflow: hidden;
-    justify-content: center;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(142, 242, 244, 0.2);
-    transition: all 0.3s ease;
-}
-*/
-
-
-.arts-crafts-cardhover {
-    transform: scale(1.05);
 }
 
 .arts-crafts-card img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0px;
+    border-radius: 10px;
     transition: transform 0.4s ease;
 }
 
@@ -336,29 +301,12 @@ body {
     transform: scale(1.05);
 }
 
-.arts-crafts-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-h1 {
-    color: white;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    margin: 0%;
-    margin-top: 20px;  
-}
-
 .arts-crafts-card h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #d4af37;
     font-weight: 400;
-    transition: none;
+    margin-top: 20px;
 }
 
 .arts-crafts-card p {
@@ -366,7 +314,6 @@ h1 {
     line-height: 1.6;
     font-weight: 300;
     font-size: 14px;
-    transition: none;
 }
 
 /* Culture Grid */
@@ -394,48 +341,12 @@ h1 {
     font-weight: 300;
 }
 
-.culture-cards  {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.culture-grid h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #d4af37;
-    font-weight: 300;
-}
-
-.culture-grid p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 50px;
-    font-weight: 300;
-}
 .culture-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     margin-top: 60px;
 }
-
-/*
-.culture-card {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
-    backdrop-filter: blur(20px);
-    overflow: hidden;
-    justify-content: center;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(142, 242, 244, 0.2);
-    transition: all 0.3s ease;
-}
-    */
 
 .culture-card:hover {
     transform: scale(1.05);
@@ -445,7 +356,7 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0px;
+    border-radius: 10px;
     transition: transform 0.4s ease;
 }
 
@@ -453,29 +364,12 @@ h1 {
     transform: scale(1.05);
 }
 
-.culture-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-h1 {
-    color: white;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    margin: 0%;
-    margin-top: 20px;  
-}
-
 .culture-card h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #d4af37;
     font-weight: 400;
-    transition: none;
+    margin-top: 20px;
 }
 
 .culture-card p {
@@ -483,233 +377,199 @@ h1 {
     line-height: 1.6;
     font-weight: 300;
     font-size: 14px;
-    transition: none;
 }
 
-/* Food Showcase */
+/* Food Showcase - UPDATED */
 
 .food-showcase {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 60px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 60px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 60px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .food-showcase::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(200deg, transparent, #d4af37, transparent);
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
+.food-showcase::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(200deg, transparent, #d4af37, transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
 
-        .food-showcase:hover{
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
+.food-showcase:hover{
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
 
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.3; transform: rotate(0deg); }
-            50% { opacity: 0.6; transform: rotate(180deg); }
-        }
+/* Updated title color */
+.culinary-title {
+    color: #d4af37 !important;
+}
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #d4af37;
-            font-weight: 300;
-            letter-spacing: normal;
-            position: relative;
-            z-index: 1;
-        }
+/* Removed box styling from paragraph */
+.intro-text-no-box {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+}
 
-        .intro-text {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 50px;
-            font-weight: 300;
-            position: relative;
-            z-index: 1;
-        }
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    justify-items: center;
+}
 
-        .food-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
-            justify-items: center;
-        }
+/* Mobile responsiveness for food section */
+@media (max-width: 768px) {
+    .food-showcase {
+        padding: 30px 20px;
+        margin: 30px 0;
+    }
+    
+    .food-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .food-item {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+    }
+    
+    .culinary-title {
+        font-size: 1.8rem;
+    }
+    
+    .intro-text-no-box {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
 
-        .food-item {
-            width: 250px;
-            height: 180px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 0px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
+.food-item {
+    width: 250px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
 
-        .food-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
+.food-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
 
-        .food-item:hover::before {
-            opacity: 1;
-        }
+.food-item:hover::before {
+    opacity: 1;
+}
 
-        .food-item:hover {
-            transform: scale(1.05);
-        }
+.food-item:hover {
+    transform: scale(1.05);
+}
 
-        .food-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 0px;
-            transition: transform 0.4s ease;
-        }
+.food-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0px;
+    transition: transform 0.4s ease;
+}
 
-        .food-item:hover img {
-            transform: scale(1.05);
-        }
+.food-item:hover img {
+    transform: scale(1.05);
+}
 
-        .food-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            text-align: center;
-        }
+.food-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+}
 
-        .food-title h3 {
-            font-size: 1.1rem;
-            font-weight: normal;
-            color: #fff;
-            margin: 0;
-        }
+.food-title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+}
 
-        .hover-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.65);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            padding: 20px;
-            border-radius: 
-            0px;
-            text-align: center;
-            transition: opacity 0.4s ease;
-        }
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    padding: 20px;
+    border-radius: 0px;
+    text-align: center;
+    transition: opacity 0.4s ease;
+}
 
-        .food-item:hover .hover-overlay {
-            opacity: 1;
-        }
+.food-item:hover .hover-overlay {
+    opacity: 1;
+}
 
-        .learn-more-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background-color: #d4af37;
-            color: #000;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+.learn-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #d4af37;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-        .learn-more-btn:hover {
-            background-color: #b5902e;
-        }
-
-        /* Remove decorative elements */
-
-        @media (max-width: 768px) {
-            .food-showcase {
-                padding: 60px 30px;
-                margin: 30px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .intro-text {
-                font-size: 1rem;
-                margin-bottom: 30px;
-            }
-
-            .food-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .food-item {
-                width: 100%;
-                max-width: 200px;
-                height: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section {
-                padding: 40px 0;
-            }
-
-            .food-showcase {
-                padding: 40px 20px;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .food-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .food-item {
-                width: 100%;
-                max-width: 250px;
-                height: 180px;
-            }
-        }
+.learn-more-btn:hover {
+    background-color: #b5902e;
+}
 
 /* Interactive Map */
 .interactive-map {
@@ -863,73 +723,6 @@ h1 {
     transform: scale(1.05);
 }
 
-.food-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    text-align: center;
-}
-
-.food-title h3 {
-    font-size: 1.1rem;
-    font-weight: normal;
-    color: #fff;
-    margin: 0 0 8px 0;
-}
-
-.food-title p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-    line-height: 1.4;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .etiquette-tips {
-        padding: 60px 30px;
-        margin: 30px 0;
-    }
-
-    .etiquette-tips h2 {
-        font-size: 2rem;
-    }
-
-    .etiquette-tips > p {
-        font-size: 1rem;
-        margin-bottom: 30px;
-    }
-
-    .tips-grid {
-        margin: 10px;
-    }
-
-    .tip-card {
-        width: 100%;
-        max-width: 200px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .etiquette-tips {
-        padding: 40px 20px;
-    }
-
-    .etiquette-tips h2 {
-        font-size: 1.8rem;
-    }
-
-    .tip-card {
-        width: 100%;
-        max-width: 250px;
-        height: 180px;
-    }
-}
-
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.9));
@@ -966,21 +759,71 @@ h1 {
     color: #d4af37;
 }
 
-/* Mobile Responsive */
+/* ENHANCED MOBILE RESPONSIVE STYLES */
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
+    /* Hero Section Mobile Optimization */
+    .hero {
+        height: 80vh; /* Reduce height on mobile */
+        min-height: 500px; /* Ensure minimum height */
+    }
+    
+    .hero-bg img {
+        object-position: center 30%; /* Focus on upper portion of image */
+        animation: none; /* Disable zoom animation on mobile for better performance */
+    }
+    
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.8) 100%
+        ); /* Adjust overlay for better text readability */
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+        max-width: 95%;
+    }
+    
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 6vw, 3rem);
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    .hero-content p {
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        margin-bottom: 30px;
+        line-height: 1.4;
+    }
+    
+    /* General Section Adjustments */
+    .section {
+        padding: 60px 0;
     }
     
     .section-title {
         font-size: 2rem;
     }
-
-    .section {
-        padding: 60px 0;
+    
+    .container {
+        padding: 0 15px;
     }
 
     /* Timeline Mobile */
+    .festivals-showcase {
+        padding: 40px 20px;
+        margin: 40px 0;
+    }
+    
+    .festivals-showcase p {
+        color: rgba(255, 255, 255, 0.8); /* Fix text color */
+    }
+    
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
         margin-left: 30px;
@@ -996,20 +839,56 @@ h1 {
         left: 15px;
     }
 
-    /* Grids Mobile */
-    .culture-grid,
-    .food-showcase,
-    .map-points,
-    .tips-grid {
+    /* Arts & Crafts Mobile */
+    .arts-crafts-showcase {
+        padding: 40px 20px;
+        margin: 40px 0;
+    }
+    
+    .arts-crafts-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Culture Grid Mobile */
+    .dance-music-showcase {
+        padding: 40px 20px;
+        margin: 40px 0;
+    }
+    
+    .culture-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Map & Tips Mobile */
+    .interactive-map,
+    .etiquette-tips {
+        padding: 40px 20px;
+        margin: 40px 0;
+    }
+
+    .map-points {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .interactive-map,
-    .etiquette-tips {
-        padding: 40px 20px;
+    .tips-grid {
+        margin: 10px;
     }
 
+    .tip-card {
+        width: 100%;
+        max-width: 280px;
+        height: 160px;
+    }
+
+    /* CTA Mobile */
+    .cta-section {
+        padding: 60px 20px;
+        margin-top: 60px;
+    }
+    
     .cta-buttons {
         flex-direction: column;
         align-items: center;
@@ -1019,11 +898,57 @@ h1 {
     .cta-btn {
         padding: 15px 30px;
         font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Small Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+        min-height: 450px;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        letter-spacing: 0.5px;
+    }
+    
+    .hero-content p {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+    }
+    
+    .section {
+        padding: 40px 0;
     }
 
-    .culture-card,
-    .food-item,
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Tip Cards */
     .tip-card {
-        padding: 30px 20px;
+        width: 100%;
+        max-width: 250px;
+        height: 180px;
+    }
+    
+    /* Timeline adjustments for very small screens */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 25px;
+        margin-right: 0;
+        padding: 20px;
+    }
+    
+    .festivals-timeline::before {
+        left: 12px;
+    }
+
+    .timeline-marker {
+        left: 12px;
+        width: 16px;
+        height: 16px;
     }
 }
