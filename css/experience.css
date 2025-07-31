@@ -5,49 +5,7 @@
             background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1586500036706-41963de24d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
             position: relative;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.4);
-        }
-
-        .page-header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-title {
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 200;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .page-subtitle {
-            font-size: 1.3rem;
-            color: #d4af37;
-            font-weight: 300;
-            letter-spacing: 2px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Experiences Grid */
+        }/* Experiences Grid */
         .experiences-section {
             padding: 100px 5%;
             max-width: 1400px;
