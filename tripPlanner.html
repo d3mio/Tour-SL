@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Packages & Trip Planner - Sri Lanka</title>
     <link rel="stylesheet" href="css/planner.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -14,22 +17,23 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="explore.html">Explore</a></li>
-                <li><a href="culture.html">Culture</a></li>
-                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#experiences">Experiences</a></li>
             </ul>
-            <button class="login-btn"> Login </button>
+            <button class="login-btn" onclick="window.open('login.html', '_blank')"> Login </button>
+
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
-            <img src="images/pexels-freestockpro-319892.jpg" alt="Sri Lanka Landscape">
+            <img src="images/tripplannerback.jpg" alt="Sri Lanka Landscape">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">Discover Sri Lanka</h1>
-            <p class="hero-subtitle">Curated experiences that capture the essence of the Pearl of the Indian Ocean</p>
+            <h1 class="hero-title">PLAN YOUR JOURNEY</h1>
+            <p class="hero-subtitle">CURATED EXPERIENCE THAT CAPTURE THE ESSENCE OF THE PEARL OF THE INDIAN OCEAN</p>
         </div>
     </section>
 
@@ -97,52 +101,60 @@
                 <div class="tab" onclick="filterPackages('luxury')">Luxury</div>
             </div>
 
-            <!-- Package Grid -->
             <div class="destinations-grid">
                 <div class="destination-card" data-category="cultural">
-                    <div class="card-bg">🏛️</div>
+                    <div class="card-image-container">
+                        <img class="card-image" src="images/CulturalTriangle.jpg" alt="Sigiriya Rock Fortress, Sri Lanka" loading="lazy">
+                    </div>
                     <div class="card-content">
                         <div class="package-duration">3 Days</div>
                         <h3 class="card-title">Cultural Triangle</h3>
-                        <div class="package-price">$299</div>
+                        <div class="package-price">299</div>
                         <p class="card-description">Explore ancient kingdoms, climb Sigiriya Rock, and discover sacred temples in this immersive cultural journey.</p>
                         <button class="book-btn">Book Experience</button>
                     </div>
                 </div>
 
                 <div class="destination-card" data-category="wildlife">
-                    <div class="card-bg">🐘</div>
+                    <div class="card-image-container">
+                        <img class="card-image" src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sri Lankan Elephant in Yala National Park" loading="lazy">
+                    </div>
                     <div class="card-content">
                         <div class="package-duration">5 Days</div>
                         <h3 class="card-title">Safari Adventure</h3>
-                        <div class="package-price">$599</div>
+                        <div class="package-price">599</div>
                         <p class="card-description">Encounter leopards, elephants, and exotic birds across Yala and Udawalawe National Parks.</p>
                         <button class="book-btn">Book Experience</button>
                     </div>
                 </div>
 
                 <div class="destination-card" data-category="romantic">
-                    <div class="card-bg">🌅</div>
+                    <div class="card-image-container">
+                        <img class="card-image" src="images/romanticescap.jpg" alt="Romantic sunset beach in Sri Lanka" loading="lazy">
+                    </div>
                     <div class="card-content">
                         <div class="package-duration">7 Days</div>
                         <h3 class="card-title">Romantic Escape</h3>
-                        <div class="package-price">$899</div>
+                        <div class="package-price">899</div>
                         <p class="card-description">Sunset cruises, private beach dinners, and luxury spa treatments for couples.</p>
                         <button class="book-btn">Book Experience</button>
                     </div>
                 </div>
 
                 <div class="destination-card" data-category="luxury">
-                    <div class="card-bg">👑</div>
+                    <div class="card-image-container">
+                        <img class="card-image" src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Luxury resort in Sri Lanka with infinity pool" loading="lazy">
+                    </div>
                     <div class="card-content">
                         <div class="package-duration">10 Days</div>
                         <h3 class="card-title">Ultimate Ceylon</h3>
-                        <div class="package-price">$1,999</div>
-                        <p class="card-description">The pinnacle of luxury travel with helicopter transfers, private chefs, and exclusive experiences.</p>
+                        <div class="package-price">1,999</div>
+                        <p class="card-description">The pinnacle of luxury travel with helicopter, private chefs, and exclusive experiences.</p>
                         <button class="book-btn">Book Experience</button>
                     </div>
                 </div>
             </div>
+
         </section>
 
         <section class="trip-builder-section">
@@ -170,32 +182,90 @@
                     
                     <div class="destinations-selector">
                         <div class="destinations-grid">
-                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="colombo">
-                                <span class="chip-emoji">🏙️</span>
-                                <div class="chip-name">Colombo</div>
-                            </div>
+                            <!-- Central -->
                             <div class="destination-chip" onclick="toggleDestination(this)" data-destination="kandy">
                                 <span class="chip-emoji">🏛️</span>
                                 <div class="chip-name">Kandy</div>
                             </div>
-                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="galle">
-                                <span class="chip-emoji">🏰</span>
-                                <div class="chip-name">Galle</div>
-                            </div>
-                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="sigiriya">
-                                <span class="chip-emoji">🗿</span>
-                                <div class="chip-name">Sigiriya</div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="nuwaraeliya">
+                                <span class="chip-emoji">🌸</span>
+                                <div class="chip-name">Nuwara Eliya</div>
                             </div>
                             <div class="destination-chip" onclick="toggleDestination(this)" data-destination="ella">
                                 <span class="chip-emoji">🏔️</span>
                                 <div class="chip-name">Ella</div>
                             </div>
+
+                            <!-- South -->
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="galle">
+                                <span class="chip-emoji">🏰</span>
+                                <div class="chip-name">Galle</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="mirissa">
+                                <span class="chip-emoji">🐋</span>
+                                <div class="chip-name">Mirissa</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="tangalle">
+                                <span class="chip-emoji">🏝️</span>
+                                <div class="chip-name">Tangalle</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="hikkaduwa">
+                                <span class="chip-emoji">🌊</span>
+                                <div class="chip-name">Hikkaduwa</div>
+                            </div>
+
+                            <!-- East -->
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="trincomalee">
+                                <span class="chip-emoji">⛩️</span>
+                                <div class="chip-name">Trincomalee</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="arugambay">
+                                <span class="chip-emoji">🏄</span>
+                                <div class="chip-name">Arugam Bay</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="batticaloa">
+                                <span class="chip-emoji">🎣</span>
+                                <div class="chip-name">Batticaloa</div>
+                            </div>
+
+                            <!-- North -->
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="jaffna">
+                                <span class="chip-emoji">🏯</span>
+                                <div class="chip-name">Jaffna</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="mannar">
+                                <span class="chip-emoji">🌳</span>
+                                <div class="chip-name">Mannar</div>
+                            </div>
+
+                            <!-- Cultural Triangle -->
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="sigiriya">
+                                <span class="chip-emoji">🗿</span>
+                                <div class="chip-name">Sigiriya</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="anuradhapura">
+                                <span class="chip-emoji">🛕</span>
+                                <div class="chip-name">Anuradhapura</div>
+                            </div>
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="polonnaruwa">
+                                <span class="chip-emoji">🏚️</span>
+                                <div class="chip-name">Polonnaruwa</div>
+                            </div>
+
+                            <!-- Western -->
+                            <div class="destination-chip" onclick="toggleDestination(this)" data-destination="colombo">
+                                <span class="chip-emoji">🏙️</span>
+                                <div class="chip-name">Colombo</div>
+                            </div>
+
+                            <!-- Wild/Nature -->
                             <div class="destination-chip" onclick="toggleDestination(this)" data-destination="yala">
                                 <span class="chip-emoji">🐘</span>
                                 <div class="chip-name">Yala</div>
                             </div>
                         </div>
                     </div>
+
 
                     <div class="duration-slider">
                         <div class="preference-label">
