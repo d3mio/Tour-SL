@@ -237,30 +237,68 @@ body {
 
 .culture-card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
+    color: white;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    justify-content: center;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(142, 242, 244, 0.2);
     transition: all 0.3s ease;
 }
 
 .culture-card:hover {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(142, 242, 244, 0.3);
+    box-shadow: 0px 4px 10px rgba(142, 242, 244, 0.3);
+}
+
+.culture-card a {
+    color: rgb(62, 194, 183);
+    font-size: 15px;
+    transition: none;
+    text-decoration: underline;
+}
+
+.culture-card a:hover {
+    text-decoration: underline;
+    color: rgb(37, 122, 95);
+}
+
+.culture-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+h1 {
+    color: white;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin: 0%;
+    margin-top: 20px;  
 }
 
 .culture-card h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #d4af37;
+    color: rgb(62, 194, 183);
     font-weight: 400;
+    transition: none;
 }
 
 .culture-card p {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     font-weight: 300;
+    font-size: 14px;
+    transition: none;
 }
 
 .food-showcase {
