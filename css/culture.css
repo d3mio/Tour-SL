@@ -273,9 +273,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin: 60px 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    gap: 30px;
 }
 
 .food-showcase h2 {
@@ -311,8 +312,7 @@ body {
   height: 180px;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  flex-wrap: wrap; 
+  border-radius: 10px; 
   
 }
 
