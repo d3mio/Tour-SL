@@ -1,0 +1,558 @@
+/* Culture Page Specific Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    
+    color: #fff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Hero Section - Culture Specific */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 2;
+}
+
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 3;
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease 0.5s forwards;
+    transform: translateY(30px);
+}
+
+.hero-content p {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 300;
+    color: #d4af37;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease 1s forwards;
+    transform: translateY(30px);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+    color: #d4af37;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Sections */
+.section {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 80px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    font-weight: 300;
+}
+
+/* Festival Timeline */
+.festivals-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.festivals-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d4af37;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: 55%;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%;
+    margin-right: 0;
+    text-align: left;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #d4af37;
+    font-weight: 400;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: #d4af37;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #000;
+    z-index: 10;
+}
+
+/* Culture Grid */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.culture-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.culture-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.culture-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    font-weight: 400;
+}
+
+.culture-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Food Showcase */
+
+.food-showcase {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 60px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.food-showcase h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    font-weight: 300;
+}
+
+.food-showcase p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.hover-food-item {
+  position: relative;
+  overflow: hidden;
+  padding: 0; 
+}
+
+.hover-food-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.hover-food-item {
+  width: 250px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  flex-wrap: wrap; 
+  
+}
+
+
+.hover-food-item:hover img {
+  transform: scale(1.05);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+
+.hover-food-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+/* Interactive Map */
+.interactive-map {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 60px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 60px 0;
+}
+
+.interactive-map h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    font-weight: 300;
+}
+
+.interactive-map p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.map-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.map-point {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-point:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.map-point h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #d4af37;
+    font-weight: 400;
+}
+
+.map-point p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+/* Etiquette Tips */
+.etiquette-tips {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 60px 0;
+}
+
+.etiquette-tips h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    font-weight: 300;
+}
+
+.etiquette-tips > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tip-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.tip-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #d4af37;
+    font-weight: 400;
+}
+
+.tip-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.9));
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 100px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 20px 40px;
+    border: 2px solid #d4af37;
+    color: #000;
+    background: #d4af37;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+    background: transparent;
+    color: #d4af37;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    /* Timeline Mobile */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 30px;
+        margin-right: 0;
+        text-align: left;
+    }
+
+    .festivals-timeline::before {
+        left: 15px;
+    }
+
+    .timeline-marker {
+        left: 15px;
+    }
+
+    /* Grids Mobile */
+    .culture-grid,
+    .food-showcase,
+    .map-points,
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .interactive-map,
+    .etiquette-tips {
+        padding: 40px 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cta-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .culture-card,
+    .food-item,
+    .tip-card {
+        padding: 30px 20px;
+    }
+}
