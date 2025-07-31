@@ -157,7 +157,7 @@
         .hero-title {
             
             font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 200;
+            font-weight: 175;
             letter-spacing: 7px;
             margin-bottom: 20px;
             opacity: 0;
@@ -166,7 +166,7 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             letter-spacing: 2px;
             font-weight: 400;
             color: #d4af37;
