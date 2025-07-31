@@ -277,6 +277,7 @@ body {
             gap: 30px;
             position: relative;
             overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .food-showcase::before {
@@ -286,8 +287,16 @@ body {
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-            animation: shimmer 8s ease-in-out infinite;
+            background: linear-gradient(200deg, transparent, #d4af37, transparent);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .food-showcase:hover{
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes shimmer {
@@ -329,7 +338,7 @@ body {
             height: 180px;
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 0px;
             cursor: pointer;
             transition: all 0.4s ease;
         }
@@ -359,7 +368,7 @@ body {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 10px;
+            border-radius: 0px;
             transition: transform 0.4s ease;
         }
 
@@ -397,7 +406,8 @@ body {
             justify-content: center;
             opacity: 0;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 
+            0px;
             text-align: center;
             transition: opacity 0.4s ease;
         }
