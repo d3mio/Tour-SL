@@ -761,17 +761,17 @@ body {
 
 /* ENHANCED MOBILE RESPONSIVE STYLES */
 
-/* Tablets (768px and below) */
+
 @media (max-width: 768px) {
-    /* Hero Section Mobile Optimization */
+   
     .hero {
-        height: 80vh; /* Reduce height on mobile */
-        min-height: 500px; /* Ensure minimum height */
+        height: 80vh; 
+        min-height: 500px; 
     }
     
     .hero-bg img {
-        object-position: center 30%; /* Focus on upper portion of image */
-        animation: none; /* Disable zoom animation on mobile for better performance */
+        object-position: center 30%;
+        animation: none; 
     }
     
     .hero-overlay {
@@ -780,7 +780,7 @@ body {
             rgba(0, 0, 0, 0.5) 0%,
             rgba(0, 0, 0, 0.2) 40%,
             rgba(0, 0, 0, 0.8) 100%
-        ); /* Adjust overlay for better text readability */
+        ); 
     }
     
     .hero-content {
