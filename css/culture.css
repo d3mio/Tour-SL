@@ -384,36 +384,49 @@ body {
 
 .map-points {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
 }
 
 .map-point {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 25px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .map-point:hover {
-    background: rgba(212, 175, 55, 0.1);
     transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.3);
 }
 
-.map-point h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.map-point-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 30px 20px 20px;
+    text-align: left;
+}
+
+.map-point-overlay h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
     color: #d4af37;
-    font-weight: 400;
 }
 
-.map-point p {
+.map-point-overlay p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.9;
 }
 
 /* Etiquette Tips */
