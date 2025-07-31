@@ -95,6 +95,7 @@
             <!-- Category Tabs -->
             <div class="category-tabs">
                 <div class="tab active" onclick="filterPackages('all')">All</div>
+                <div class="tab" onclick="filterPackages('religious')">Religious</div>
                 <div class="tab" onclick="filterPackages('wildlife')">Wildlife</div>
                 <div class="tab" onclick="filterPackages('cultural')">Cultural</div>
                 <div class="tab" onclick="filterPackages('romantic')">Romantic</div>
@@ -102,20 +103,33 @@
             </div>
 
             <div class="destinations-grid">
-                <div class="destination-card" data-category="cultural">
+                <div class="destination-card" data-category="cultural" id="cultural">
                     <div class="card-image-container">
-                        <img class="card-image" src="images/CulturalTriangle.jpg" alt="Sigiriya Rock Fortress, Sri Lanka" loading="lazy">
+                        <img class="card-image" src="images/Cultural.jpg" alt="Sigiriya Rock Fortress, Sri Lanka" loading="lazy">
                     </div>
                     <div class="card-content">
                         <div class="package-duration">3 Days</div>
                         <h3 class="card-title">Cultural Triangle</h3>
                         <div class="package-price">299</div>
-                        <p class="card-description">Explore ancient kingdoms, climb Sigiriya Rock, and discover sacred temples in this immersive cultural journey.</p>
+                        <p class="card-description">Explore ancient kingdoms and climb Sigiriya Rock in this immersive cultural journey.</p>
                         <button class="book-btn">Book Experience</button>
                     </div>
                 </div>
 
-                <div class="destination-card" data-category="wildlife">
+                <div class="destination-card" data-category="religious" id="religious">
+                    <div class="card-image-container">
+                        <img class="card-image" src="images/CulturalTriangle.jpg" alt="Temple of the Sacred Tooth Relic, Kandy" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="package-duration">6 Days</div>
+                        <h3 class="card-title">Sacred Pilgrimage</h3>
+                        <div class="package-price">349</div>
+                        <p class="card-description">Visit the Temple of the Sacred Tooth Relic, ancient monasteries, and holy sites in this spiritual journey through Sri Lanka's religious heritage.</p>
+                        <button class="book-btn">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-category="wildlife" id="wildlife">
                     <div class="card-image-container">
                         <img class="card-image" src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sri Lankan Elephant in Yala National Park" loading="lazy">
                     </div>
@@ -128,7 +142,20 @@
                     </div>
                 </div>
 
-                <div class="destination-card" data-category="romantic">
+                <div class="destination-card" data-category="adventure" id="adventure">
+                    <div class="card-image-container">
+                        <img class="card-image" src="images/elephantriding.webp" alt="Adventure activities in Sri Lanka - Elephant safari, surfing, whale watching" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="package-duration">5 Days</div>
+                        <h3 class="card-title">Ultimate Adventure</h3>
+                        <div class="package-price">599</div>
+                        <p class="card-description">Experience thrilling elephant safaris, horseback riding, whale watching in Mirissa, world-class surfing, and soar through the skies with Flying Ravana zipline adventures.</p>
+                        <button class="book-btn">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-category="romantic" id="romantic">
                     <div class="card-image-container">
                         <img class="card-image" src="images/romanticescap.jpg" alt="Romantic sunset beach in Sri Lanka" loading="lazy">
                     </div>
@@ -141,7 +168,7 @@
                     </div>
                 </div>
 
-                <div class="destination-card" data-category="luxury">
+                <div class="destination-card" data-category="luxury" id="luxury">
                     <div class="card-image-container">
                         <img class="card-image" src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Luxury resort in Sri Lanka with infinity pool" loading="lazy">
                     </div>
@@ -153,6 +180,7 @@
                         <button class="book-btn">Book Experience</button>
                     </div>
                 </div>
+
             </div>
 
         </section>
@@ -335,9 +363,9 @@
                 </div>
             </div>
 
-            <div class="generate-section">
-                <button class="generate-btn" onclick="generateItinerary()">
-                    ✨ Generate My Perfect Journey
+            <div class="cta-section">
+                <button class="cta-btn" onclick="generateItinerary()">
+                    Generate My Perfect Journey
                 </button>
             </div>
         </div>
