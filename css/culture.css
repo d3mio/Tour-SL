@@ -784,23 +784,31 @@ h1 {
 
 /* Etiquette Tips */
 .etiquette-tips {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
     padding: 60px;
+    text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin: 60px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.etiquette-tips:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .etiquette-tips h2 {
-    text-align: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #d4af37;
     font-weight: 300;
+    letter-spacing: normal;
 }
 
 .etiquette-tips > p {
-    text-align: center;
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 50px;
@@ -808,36 +816,118 @@ h1 {
 }
 
 .tips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    display: inline-block;
+    margin: 15px;
 }
 
 .tip-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    width: 250px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.tip-card:hover::before {
+    opacity: 1;
 }
 
 .tip-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.2);
+    transform: scale(1.05);
 }
 
-.tip-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: #d4af37;
-    font-weight: 400;
+.tip-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0px;
+    transition: transform 0.4s ease;
 }
 
-.tip-card p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    font-weight: 300;
+.tip-card:hover img {
+    transform: scale(1.05);
+}
+
+.food-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+}
+
+.food-title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.food-title p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .etiquette-tips {
+        padding: 60px 30px;
+        margin: 30px 0;
+    }
+
+    .etiquette-tips h2 {
+        font-size: 2rem;
+    }
+
+    .etiquette-tips > p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .tips-grid {
+        margin: 10px;
+    }
+
+    .tip-card {
+        width: 100%;
+        max-width: 200px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .etiquette-tips {
+        padding: 40px 20px;
+    }
+
+    .etiquette-tips h2 {
+        font-size: 1.8rem;
+    }
+
+    .tip-card {
+        width: 100%;
+        max-width: 250px;
+        height: 180px;
+    }
 }
 
 /* CTA Section */
