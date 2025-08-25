@@ -1,1 +1,1 @@
-Link : https://d3mio.github.io/Tour-SL/
+Link : https://tour-sl-six.vercel.app
